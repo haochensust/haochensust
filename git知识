@@ -47,12 +47,21 @@ git知识
  	git reflog
  	git reset --hard [文件删除前的版本]
 
- 9.git push：
+9.git pull:从远程库拉代码
+
+	git remote add my_origin https://gitee.com/haochensust/sustwork.git
+	git remote -v
+	git pull my_origin
+	git commit -m "add files" *
+	git push my_origin master
+
+
+ 10.git push：
  	1)起别名
  	git remote add origin https://github.com/haochensust/haochensust.git
  	2) git push origin master
 
-10.gitlab 服务器搭建过程：
+11.gitlab 服务器搭建过程：
 	1）首页：https://about.gitlab.com/
 	2) 安装说明: https://about.gitlab.com/installation/	
 	3)安装到centos7上面，安装完成后，需要关闭防火墙： service firewalld stop
