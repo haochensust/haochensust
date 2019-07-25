@@ -1,0 +1,60 @@
+git知识
+
+一.Git和代码托管中心
+1）局域网环境下：gitlab服务器
+2)外网环境下：Github,码云(https://gitee.com/    https://gitee.com/haochensust/events  账号：haochensust 密码：lsm520520520)
+
+二.git常用命令
+1. git init  : 初始化git本地库
+	1）ls -lA 可以显示隐藏文件,.git属于隐藏文件
+	1）.git目录中存放的是本地库相关的子目录和文件，不能胡乱删除或修改
+2.设置签名：
+	1）形式：
+		用户名：tom
+		Email:goodmoring@atguigu.com
+		作用:区分不同用户的身份
+		辨析：这里设置的签名和登录远程库的账号，密码没有任何关系
+	2）级别以及命令：
+		项目级别/仓库级别：仅在当前本地库范围内有效
+			git config user.name tom_pro
+			git config user.email goodmoring@atguigu.com
+		系统用户级别：登录当前操作系统的用户范围
+			git config --global user.name tom_pro
+			git config --global user.email goodmoring@atguigu.com
+
+	3）签名保存位置：
+	 		项目级别/仓库级别: cat .git/config
+	 		系统用户级别: cd ~ 
+	 					  cat .gitconfig
+
+3. git add  [fileName]
+
+4. git status
+
+5. git commit -m "my fist commit info" [fileName]
+
+6.git log
+   git log --pretty=oneline
+   git log --oneline 
+   git reflog：
+   	1）显示的日志对于前进后退版本很有用
+   	2）HEAD@{移动到当前版本需要多少步}
+
+ 7. git reset:版本回退
+ 	  git reset --hard 9a9ebe0
+
+ 8. 文件永久删除后找回：
+ 	git reflog
+ 	git reset --hard [文件删除前的版本]
+
+ 9.git push：
+ 	1)起别名
+ 	git remote add origin https://github.com/haochensust/haochensust.git
+ 	2) git push origin master
+
+10.gitlab 服务器搭建过程：
+	1）首页：https://about.gitlab.com/
+	2) 安装说明: https://about.gitlab.com/installation/	
+	3)安装到centos7上面，安装完成后，需要关闭防火墙： service firewalld stop
+
+
