@@ -1,0 +1,111 @@
+mysql高级
+	
+一：mysql的架构介绍
+1.mysql介绍：
+	1）关系型数据库，Oracle收购了它
+	2）Mysql可以定制，采用GPL协议，可以修改源码来开发自己的Mysql系统。
+	3）高级mysql:
+		<1>:Mysql内核
+		<2>sql优化工程师
+		<3>mysql服务器的优化
+		<4>各种参数常亮的设定
+		<5>主从复制
+		<6>软硬件升级
+		<7>容灾备份
+		<8>sql编程
+
+
+2.mysql linux 版的安装
+	1）安装.rmp格式的mysql:5.5
+	2)检查是否安装过mysql:  rpm -qa | grep -i mysql
+	3)若没有安装过则先安装服务端： rpm -ivh MYSQL-server-5.5.48-l.linux2.6.i386.rpm
+	4)检测是否安装成功：
+		<1>第一种方式： mysqladmin --version
+		<2>第二种方式: cat /etc/passwd | grep mysql
+					   cat /etc/group | grep mysql
+	5)启动： service mysql start  或 /etc/init.d/msql start  或 /etc/init.d/msql stop
+	6)查看是否启动： ps -ef | grep mysql  或 service mysql status
+	7)设置密码：
+		/usr/bin/mysqladmin -u root password 123456
+	8)使用密码登录mysql:
+		mysql -u root -p
+	9)设置开机自启动mysql:
+		chkconfig mysql on
+	10)查看运行级别： chkconfig --list  | grep mysql
+				cat /etc/inittab
+	11)查看开机自启动是否设置成功：
+		ntsysv
+		若mysql服务前面有个*号，代表服务开机自启动设置成功
+	12)other:
+		<1> mysql数据库文件存放路径：/var/lib/mysql/
+		<2> 配置文件目录:  /usr/share/mysql
+		<3> 相关命令目录: /usr/bin
+		<4> 启停相关脚本： /etc/init.d/mysql 
+	13）解决linux下中文数据库乱码：
+		<1>查看字符集： show variables like '%char%'; 会发现默认的character_set_server 和 character_set_database 都为latin1
+		<2>修改字符集为utf-8:
+			①vim /etc/my.conf
+			②在[client] 下面加上：default-character-set=utf8
+			③在[mysqld]下面添加：character-set-server=utf8
+								 character-set-client=utf8
+								 collation-server=utf8_general_ci
+			④在[mysql]下添加：default-character-set=utf8
+		<3>重启mysql,执行show variables like '%char%';会发现配置改成功了，也支持中文了；若在建库之前就有中文乱码了，就算修改了字符集也不会成功，只能重新建库才能成功
+
+	<14>windows下的mysql配置文件是：my.ini;linux 下的mysql配置文件是：my.cnf
+3.mysq配置文件
+	1)二进制日志 log_bin： 用于主从复制。
+	2)错误日志 log_error： 默认是关闭的，记录严重的警告和错误信息，每次启动和关闭的详细信息等。
+	3)查询日志 log： 默认是关闭的，记录查询的sql语句，如果开启会降低mysql的整体性能，因为记录日志也是需要消耗系统资源的
+	4)数据文件
+		①两系统：windows:D:\devSofts\MySQLServer5.5\data目录下可以挑选很多库
+				 linux: ls -1F|grep ^d (查看以目录开头的文件)，默认了路径 /var/lib/mysql
+		②frm文件：存放表结构
+		③myd文件：存放表数据
+		③myi:存放表索引
+
+	5）如何配置：
+		①windows: my.ini文件
+		②linux: /etc/my.cnf文件
+4.mysql逻辑架构介绍
+	1）
+5.mysql存储引擎
+
+
+二：索引优化分析
+1.性能下降SQL慢
+  执行时间长
+  等待时间长
+
+2.常见通用的join连接
+
+3.索引简介
+
+4.性能分析
+
+5.索引优化
+
+
+
+三：查询截取分析
+
+1.查询优化
+2.慢查询优化
+3.批量数据脚本
+4.Show profile
+5.全局查询日志
+
+
+
+四：mysql锁机制
+
+1.行锁
+2.表锁
+3.页锁
+
+
+五：主从复制
+
+1.复制的基本原则
+2.复制最大的问题
+3.一主一从常见配置
