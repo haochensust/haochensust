@@ -1,0 +1,110 @@
+练习苏州掌上营业厅：http://wap.js.10086.cn/
+
+chrome://settings/content/cookies
+
+15152950716
+112233
+================
+1:获取Cookie: http://wap.js.10086.cn/login.thtml?redirectURL=http://wap.js.10086.cn/  GET
+	
+		requestHeader:
+			Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+			Accept-Encoding: gzip, deflate
+			Accept-Language: zh-CN,zh;q=0.9
+			Cache-Control: no-cache
+			Connection: keep-alive
+			Host: wap.js.10086.cn
+			Pragma: no-cache
+			Referer: http://wap.js.10086.cn/
+			Upgrade-Insecure-Requests: 1
+			User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
+			X-FirePHP-Version: 0.0.6
+
+		responseHeaders:
+			Connection: keep-alive
+			Content-Encoding: gzip
+			Content-Type: text/html; charset=UTF-8
+			Date: Mon, 12 Aug 2019 15:17:36 GMT
+			Server: Jsmcc_N
+			Set-Cookie: JSESSIONID=qyKGZ_gM9lSINgjSpNyD3xzEQWXEo1Wn6XdgUuMYl0ctQRXdBzOO!-1368357229; path=/; HttpOnly
+			Set-Cookie: DZQDPAACTK=615f7db79775bd4c8038a12e8f0f3fcd
+			Transfer-Encoding: chunked
+			X-Frame-Options: SAMEORIGIN
+
+2.http://wap.js.10086.cn/imageVerifyCode.do?t=20190812231736410&imgReqSeq=5187c56db91d4e129ac580ab6350b4a51207 GET
+	
+	RequestHeader:
+		Accept: image/webp,image/apng,image/*,*/*;q=0.8
+		Accept-Encoding: gzip, deflate
+		Accept-Language: zh-CN,zh;q=0.9
+		Cache-Control: no-cache
+		Connection: keep-alive
+
+		Cookie: JSESSIONID=qyKGZ_gM9lSINgjSpNyD3xzEQWXEo1Wn6XdgUuMYl0ctQRXdBzOO!-1368357229; DZQDPAACTK=615f7db79775bd4c8038a12e8f0f3fcd; XWBD_SESSIONID=S081223014091109081
+		
+		Host: wap.js.10086.cn
+		Pragma: no-cache
+		Referer: http://wap.js.10086.cn/login.thtml?redirectURL=http://wap.js.10086.cn/
+		User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
+		X-FirePHP-Version: 0.0.6
+	Responseheader:
+		Cache-Control: no-cache
+		Connection: keep-alive
+		Content-Encoding: gzip
+		Content-Type: image/jpeg
+		Date: Mon, 12 Aug 2019 15:17:37 GMT
+		Expires: Thu, 01 Jan 1970 00:00:00 GMT
+		Pragma: No-cache
+		Server: Jsmcc_N
+		Transfer-Encoding: chunked
+		X-Frame-Options: SAMEORIGIN
+
+2.http://wap.js.10086.cn/actionDispatcher.do  POST
+
+FormData:
+	reqUrl: loginInit
+	ver: t
+	operNum: loginInit
+	mywaytoopen: 0cf5a8425bbc0513e5e5fa35ec9aeacea2
+	browserUA: Mozilla/5.0 {Windows NT 6.3; WOW64} AppleWebKit/537.36 {KHTML, like Gecko} Chrome/75.0.3770.142 Safari/537.36
+requestHeader:
+	Accept: application/json, text/javascript, */*; q=0.01
+	Accept-Encoding: gzip, deflate
+	Accept-Language: zh-CN,zh;q=0.9
+	Connection: keep-alive
+	Content-Length: 227
+	Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+	Cookie: JSESSIONID=0iWGBpuWEcBSMVKVS8AFnBx7OVC4qNJBfQ8IUHFpLRCUCgM-xZZ-!-517818981; DZQDPAACTK=996b41c304c6c5785691a9f9dbd5d882; XWBD_SESSIONID=S081221212334674617
+	hgvhv: 0cf5a8425bbc0513e5e5fa35ec9aeacea2
+	Host: wap.js.10086.cn
+	Origin: http://wap.js.10086.cn
+	Referer: http://wap.js.10086.cn/login.thtml?redirectURL=http://wap.js.10086.cn/
+	User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+	X-Requested-With: XMLHttpRequest
+
+
+=============================
+
+1.http://wap.js.10086.cn/actionDispatcher.do  POST
+RequestHeader:
+	Accept: application/json, text/javascript, */*; q=0.01
+	Accept-Encoding: gzip, deflate
+	Accept-Language: zh-CN,zh;q=0.9
+	Connection: keep-alive
+	Content-Length: 259
+	Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+	hgvhv: 4cd7a3537b4835d3f0e216f34e5e8d9c66
+	Host: wap.js.10086.cn
+	Origin: http://wap.js.10086.cn
+	Referer: http://wap.js.10086.cn/login.thtml
+	User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
+	X-FirePHP-Version: 0.0.6
+	X-Requested-With: XMLHttpRequest
+FormData:
+
+	reqUrl: loginTouch
+	busiNum: checkMobile
+	mobile: 15152950716
+	password: 123123
+	mywaytoopen: 4cd7a3537b4835d3f0e216f34e5e8d9c66
+	browserUA: Mozilla/5.0 {Windows NT 6.3; WOW64} AppleWebKit/537.36 {KHTML, like Gecko} Chrome/76.0.3809.100 Safari/537.36
