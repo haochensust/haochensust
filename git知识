@@ -54,6 +54,9 @@ git知识
 	git pull my_origin
 	git commit -m "add files" *
 	git push my_origin master
+	
+	##强制push：这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候
+	git push -u origin master -f
 
 
  10.git push：
