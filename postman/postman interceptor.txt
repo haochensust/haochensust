@@ -1,3 +1,5 @@
 解决postman interceptor 安装后postman无法识别，打不开拦截器的问题：
 
-  修改postman安装包中js/requester.js 和runner.js ，需要将其中的aicmkgpgakddgnaphhhpliifpcfhicfo 字符串替换成扩展程序界面的Interceptor的id，如下图所示：每个人，每次安装这个id都不一样，所以需要自己去复制，切记
+  修改postman安装包中js/requester.js 和runner.js ，需要将其中的
+aicmkgpgakddgnaphhhpliifpcfhicfo 字符串替换成扩展程序界面的Interceptor的id，
+如下图所示：每个人，每次安装这个id都不一样，所以需要自己去复制，切记
