@@ -48,10 +48,12 @@ git知识
  	git reset --hard [文件删除前的版本]
 
 9.git pull:从远程库拉代码
-
+	git clone https://gitee.com/haochensust/sustwork.git
+	cd sustwork/
 	git remote add my_origin https://gitee.com/haochensust/sustwork.git
 	git remote -v
 	git pull my_origin
+	git add  [fileName]
 	git commit -m "add files" *
 	git push my_origin master
 	
